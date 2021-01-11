@@ -1,13 +1,24 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <title>Example 2</title>
+
+        <!-- import css from external file -->
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <!-- create sliders with starting values -->
         <div id="ui">
-            <input id="x" name="x" type="range" min="1" max="20" step="1" value="10">
+            <input id="x" name="x" type="range" min="1" max="20" step="1" value="10" oninput="makeRows()">
             <label id="x_label" for="x">X: 10</label>
-            <input id="y" name="y" type="range" min="1" max="50" step="1" value="10">
+            <input id="y" name="y" type="range" min="1" max="50" step="1" value="10" oninput="makeRows()">
             <label id="y_label" for="y">Y: 10</label>
         </div>
-        <script src="./app.js"></script>
+
+        <!-- placeholder for table -->
+        <table id="table"></table>
+
+        <!-- import javascript from external file -->
+        <script src="script.js"></script>
     </body>
 </html>

@@ -1,0 +1,25 @@
+html {
+    font-family: sans-serif;
+}
+
+#ui {
+    margin-bottom: 10px;
+}
+
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+/* uncomment to style cells */
+/* td {
+    width: 40px;
+    text-align: center;
+    font-family: monospace;
+} */
