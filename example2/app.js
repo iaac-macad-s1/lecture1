@@ -48,7 +48,7 @@ function makeRows() {
 
         // create a table cell
         const cell = document.createElement( 'td' )
-        cell.innerText = c + ',' + r
+        cell.innerText = r + ',' + c
         cell.style.border = '1px solid grey'
         cell.style.padding = '0px'
 
