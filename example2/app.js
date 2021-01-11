@@ -1,5 +1,9 @@
+// get reference to sliders
+
 const x_slider = document.getElementById( 'x' )
 const y_slider = document.getElementById( 'y' )
+
+// listen to slider events
 
 x_slider.addEventListener( 'mouseup', onMouseUp, false)
 y_slider.addEventListener( 'mouseup', onMouseUp, false)
