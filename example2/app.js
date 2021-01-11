@@ -40,18 +40,22 @@ function makeRows() {
 
     for ( r = 0; r < rows; r ++ ) {
 
+      // create a table row
       const row = document.createElement( 'tr' )
       table.appendChild( row )
 
       for ( c = 0; c < columns; c ++ ) {
 
+        // create a table cell
         const cell = document.createElement( 'td' )
         cell.innerText = c + ',' + r
         cell.style.border = '1px solid grey'
         cell.style.padding = '0px'
 
+        // generate a random background color for cell
         const color = Math.floor( Math.random() * 16777215 ).toString( 16 )
 
+        // listen to events related to the cell
         cell.addEventListener( 'mouseover', function () {
 
           cell.style.background = '#' + color

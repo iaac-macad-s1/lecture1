@@ -1,8 +1,12 @@
+// get reference to html elements
 const container = document.getElementById( 'container' )
 const img = document.getElementById( 'myImage' )
+
+// listen to events related to the image
 img.addEventListener( 'mouseover', mouseOver, false )
 img.addEventListener( 'mouseout', mouseOut, false )
 
+// define what happens when there is a mouse over event
 function mouseOver () {
 
     console.log( 'in' )
@@ -13,11 +17,11 @@ function mouseOver () {
 
 }
 
+// define what happens when there is a mouse out event
 function mouseOut () {
 
     console.log( 'out' )
     document.getElementById( 'caption' ).remove()
-
 
 }
 
