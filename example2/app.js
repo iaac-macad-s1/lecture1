@@ -8,47 +8,64 @@ function makeRows() {
 
     // remove existing container
 
-    let container = document.getElementById( 'container' )
-    console.log(container)
+    let table = document.getElementById( 'table' )
 
-    if ( container ) {
-        container.remove()
+    if ( table ) {
+
+        table.remove()
+
     }
+
+    // create new container
+
+    table = document.createElement( 'table' )
+    table.id = 'table'
+    document.body.appendChild( table )
+
+    // get slider values
 
     const rows = y_slider.valueAsNumber
     const columns = x_slider.valueAsNumber
 
-    container = document.createElement( 'div' )
-    container.classList.add( 'grid' )
-    container.id = 'container'
-    document.body.appendChild( container )
+    // update labels
 
     document.getElementById( 'x_label' ).innerHTML = 'X: ' + columns
     document.getElementById( 'y_label' ).innerHTML = 'Y: ' + rows
 
-    container.style.setProperty('--grid-rows', rows)
-    container.style.setProperty('--grid-cols', columns)
+    // make table items
 
-    for (c = 0; c < (rows * columns); c++) {
-      let cell = document.createElement("div")
-      cell.innerText = (c + 1)
-      container.appendChild(cell).className = "grid-item"
+    for ( r = 0; r < rows; r ++ ) {
 
-      const color = Math.floor(Math.random()*16777215).toString(16)
+      const row = document.createElement( 'tr' )
+      table.appendChild( row )
 
-      cell.addEventListener( 'mouseover', function () {
+      for ( c = 0; c < columns; c ++ ) {
 
-        cell.style.background = '#' + color
+        const cell = document.createElement( 'td' )
+        cell.innerText = c + ',' + r
+        cell.style.border = '1px solid grey'
+        cell.style.padding = '0px'
 
-      }, false )
+        const color = Math.floor( Math.random() * 16777215 ).toString( 16 )
 
-      cell.addEventListener( 'mouseout', function () {
+        cell.addEventListener( 'mouseover', function () {
 
-        cell.style.background = 'white'
+          cell.style.background = '#' + color
 
-      }, false )
+        }, false )
+
+        cell.addEventListener( 'mouseout', function () {
+
+          cell.style.background = 'white'
+
+        }, false )
+
+        row.appendChild( cell )
+
+      }
 
     }
+
 }
   
 makeRows();
