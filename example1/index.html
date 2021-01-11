@@ -1,9 +1,67 @@
+<!-- see also https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started -->
+
+<!DOCTYPE html> 
 <html>
-    <head></head>
+
+    <!-- everything that isn't content -->
+    <head>
+        <meta charset="utf-8">
+        <title>Example 1</title>
+
+        <!-- css -->
+        <style>
+            html {
+                font-family: sans-serif; /* default font */
+            }
+
+            img {
+                width: 512px; /* set image width */
+            }
+
+            #caption {
+                display: none; /* start with caption hidden */
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <!-- content -->
     <body>
-        <div id="container">
-            <a title="Event Horizon Telescope, uploader cropped and converted TIF to JPG, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg"><img id="myImage" width="512" alt="Black hole - Messier 87 crop max res" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/1024px-Black_hole_-_Messier_87_crop_max_res.jpg"></a>
-        </div>
-        <script src="./app.js"></script>
+        <!-- some text and links -->
+        <p>
+            <a href="https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg">Event Horizon Telescope, uploader cropped and converted TIF to JPG</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
+        </p>
+        
+        <!-- an image -->
+        <img id="myImage"
+                alt="Black hole - Messier 87 crop max res"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/1024px-Black_hole_-_Messier_87_crop_max_res.jpg">
+
+        <!-- a caption -->
+        <p id="caption">
+            The Event Horizon Telescope (EHT) — a planet-scale array of eight ground-based radio telescopes forged through international collaboration — was designed to capture images of a black hole. In coordinated press conferences across the globe, EHT researchers revealed that they succeeded, unveiling the first direct visual evidence of the supermassive black hole in the centre of Messier 87 and its shadow.
+        </p>
+
+        <!-- javascript -->
+        <script type="application/javascript">
+            // get reference to html elements
+            const img = document.getElementById('myImage')
+
+            // listen to events related to the image
+            img.addEventListener('mouseover', mouseOver, false)
+            img.addEventListener('mouseout', mouseOut, false)
+
+            // define what happens when there is a mouse over event
+            function mouseOver() {
+                document.getElementById('caption').style.display = 'block';
+            }
+
+            // define what happens when there is a mouse out event
+            function mouseOut() {
+                document.getElementById('caption').style.display = 'none';
+            }
+        </script>
+
+        <!-- the end -->
     </body>
 </html>
