@@ -6,7 +6,6 @@ These examples introduce html and javascript concepts we'll be using in the semi
 
 - [Example 1](example1): Simple html and javascript example
 - [Example 2](example2): Creates an html table with javascript
-- [Example 3](example3): Creates a grid using css (extra)
 
 ## References
 
